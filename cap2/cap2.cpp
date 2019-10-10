@@ -60,6 +60,8 @@ void OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify)
         wsprintf(sz, "Movie-%u.avi", i);
         capFileSaveAs(camhwnd, sz);
         ++i;
+        capDriverDisconnect(camhwnd);
+        capDriverConnect(camhwnd, 0);
         break;
     }
 }
